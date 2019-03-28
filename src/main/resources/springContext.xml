@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id = "tyre1Bean" class = "com.techgene.Tyres">
+         <property name="name" value = "MRF"></property>
+         <property name="place" value = "India"></property>
+         <property name="message" value = "Make in India"></property> 
+       </bean>
+       <bean id = "engine1Bean" class = "com.techgene.Engine">
+          <property name="company" value = "Volvo"></property>
+       </bean>
+              <bean id = "tyre2Bean" class = "com.techgene.Tyres">
+         <property name="name" value = "TVS"></property>
+         <property name="place" value = "India"></property>
+         <property name="message" value = "Make in India"></property> 
+       </bean>
+              <bean id = "engine2Bean" class = "com.techgene.Engine">
+          <property name="company" value = "Toyota"></property>
+       </bean>
+        
+       <bean id = "InjectwithSetter" class = "com.techgene.Vehicle">
+		<property name="engine" ref = "engine1Bean"></property>
+       	<property name="tyre" ref = "tyre1Bean"></property>
+       </bean>  
+        
+        <bean id = "InjectwithConstructor" class = "com.techgene.Vehicle">
+        <constructor-arg name = "engine" ref = "engine1Bean"></constructor-arg>
+        <constructor-arg name = "tyre" ref = "tyre1Bean"></constructor-arg>
+        </bean>
+        </beans>
